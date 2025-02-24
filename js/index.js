@@ -48,4 +48,23 @@ function main() {
     'gaining a newfound power',
     "earning a hero's place in legend",
   ];
+
+    let characterIndex = 0;
+  let settingIndex = 0;
+  let conflictIndex = 0;
+  let actionIndex = 0;
+  let outcomeIndex = 0;
+
+
+  function 
+
+  function randomStory() {
+    const character = characters[Math.floor(Math.random() * characters.length)];
+    const setting = settings[Math.floor(Math.random() * settings.length)];
+    const conflict = conflicts[Math.floor(Math.random() * conflicts.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+
+    return `${character} ${setting}, ${conflict}, ${action}, and ${outcome}.`;
+  }
 }
