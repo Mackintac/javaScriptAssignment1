@@ -49,12 +49,14 @@ function main() {
     "earning a hero's place in legend",
   ];
 
+  // Index Counters: for use of maintaining state of the current index of each respective array.
   let characterIndex = 0;
   let settingIndex = 0;
   let conflictIndex = 0;
   let actionIndex = 0;
   let outcomeIndex = 0;
 
+  // Counter functions that increment, reset if applicable, and update the current story string's values
   function charButtonCounter() {
     if (characterIndex < characters.length - 1) {
       characterIndex++;
@@ -100,11 +102,13 @@ function main() {
     updateStoryString();
   }
 
+  // Function that uses the current index of each respective array to provide a custom story
   function updateStoryString() {
     const story = `${characters[characterIndex]} ${settings[settingIndex]}, ${conflicts[conflictIndex]}, ${actions[actionIndex]}, and ${outcomes[outcomeIndex]}.`;
     document.getElementById('story').innerText = story;
   }
 
+  // Event listeners utilizing element IDs to attach event listeners for functions
   document
     .getElementById('nextCharacter')
     .addEventListener('click', charButtonCounter);
@@ -121,5 +125,6 @@ function main() {
     .getElementById('nextOutcome')
     .addEventListener('click', outcomeButtonCounter);
 
+  // An initializing function call of the story string to populate the page with default information
   updateStoryString();
 }
