@@ -108,6 +108,18 @@ function main() {
     document.getElementById('story').innerText = story;
   }
 
+  // Function to generate a random story
+  function randomStory() {
+    const character = characters[Math.floor(Math.random() * characters.length)];
+    const setting = settings[Math.floor(Math.random() * settings.length)];
+    const conflict = conflicts[Math.floor(Math.random() * conflicts.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+
+    const story = `${character} ${setting}, ${conflict}, ${action}, and ${outcome}.`;
+    document.getElementById('story').innerText = story;
+  }
+
   // Event listeners utilizing element IDs to attach event listeners for functions
   document
     .getElementById('nextCharacter')
@@ -124,6 +136,7 @@ function main() {
   document
     .getElementById('nextOutcome')
     .addEventListener('click', outcomeButtonCounter);
+  document.getElementById('randomStory').addEventListener('click', randomStory);
 
   // An initializing function call of the story string to populate the page with default information
   updateStoryString();
