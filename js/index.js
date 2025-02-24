@@ -141,3 +141,6 @@ function main() {
   // An initializing function call of the story string to populate the page with default information
   updateStoryString();
 }
+
+// Call main function
+main();
