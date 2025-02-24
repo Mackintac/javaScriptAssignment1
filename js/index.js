@@ -61,6 +61,7 @@ function main() {
     } else {
       characterIndex = 0;
     }
+    updateStoryString();
   }
 
   function settingButtonCounter() {
@@ -69,6 +70,7 @@ function main() {
     } else {
       settingIndex = 0;
     }
+    updateStoryString();
   }
 
   function conflictButtonCounter() {
@@ -77,6 +79,7 @@ function main() {
     } else {
       conflictIndex = 0;
     }
+    updateStoryString();
   }
 
   function actionButtonCounter() {
@@ -85,6 +88,7 @@ function main() {
     } else {
       actionIndex = 0;
     }
+    updateStoryString();
   }
 
   function outcomeButtonCounter() {
@@ -93,6 +97,12 @@ function main() {
     } else {
       outcomeIndex = 0;
     }
+    updateStoryString();
+  }
+
+  function updateStoryString() {
+    const story = `${characters[characterIndex]} ${settings[settingIndex]}, ${conflicts[conflictIndex]}, ${actions[actionIndex]}, and ${outcomes[outcomeIndex]}.`;
+    document.getElementById('story').innerText = story;
   }
 
   document
@@ -111,7 +121,5 @@ function main() {
     .getElementById('nextOutcome')
     .addEventListener('click', outcomeButtonCounter);
 
-  updateStory();
+  updateStoryString();
 }
-
-document.addEventListener('DOMContentLoaded', main);
