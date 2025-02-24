@@ -49,22 +49,69 @@ function main() {
     "earning a hero's place in legend",
   ];
 
-    let characterIndex = 0;
+  let characterIndex = 0;
   let settingIndex = 0;
   let conflictIndex = 0;
   let actionIndex = 0;
   let outcomeIndex = 0;
 
-
-  function 
-
-  function randomStory() {
-    const character = characters[Math.floor(Math.random() * characters.length)];
-    const setting = settings[Math.floor(Math.random() * settings.length)];
-    const conflict = conflicts[Math.floor(Math.random() * conflicts.length)];
-    const action = actions[Math.floor(Math.random() * actions.length)];
-    const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
-
-    return `${character} ${setting}, ${conflict}, ${action}, and ${outcome}.`;
+  function charButtonCounter() {
+    if (characterIndex < characters.length - 1) {
+      characterIndex++;
+    } else {
+      characterIndex = 0;
+    }
   }
+
+  function settingButtonCounter() {
+    if (settingIndex < settings.length - 1) {
+      settingIndex++;
+    } else {
+      settingIndex = 0;
+    }
+  }
+
+  function conflictButtonCounter() {
+    if (conflictIndex < conflicts.length - 1) {
+      conflictIndex++;
+    } else {
+      conflictIndex = 0;
+    }
+  }
+
+  function actionButtonCounter() {
+    if (actionIndex < actions.length - 1) {
+      actionIndex++;
+    } else {
+      actionIndex = 0;
+    }
+  }
+
+  function outcomeButtonCounter() {
+    if (outcomeIndex < outcomes.length - 1) {
+      outcomeIndex++;
+    } else {
+      outcomeIndex = 0;
+    }
+  }
+
+  document
+    .getElementById('nextCharacter')
+    .addEventListener('click', charButtonCounter);
+  document
+    .getElementById('nextSetting')
+    .addEventListener('click', settingButtonCounter);
+  document
+    .getElementById('nextConflict')
+    .addEventListener('click', conflictButtonCounter);
+  document
+    .getElementById('nextAction')
+    .addEventListener('click', actionButtonCounter);
+  document
+    .getElementById('nextOutcome')
+    .addEventListener('click', outcomeButtonCounter);
+
+  updateStory();
 }
+
+document.addEventListener('DOMContentLoaded', main);
